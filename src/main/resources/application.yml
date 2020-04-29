@@ -1,0 +1,19 @@
+server:
+  port: 8090
+
+ordering.resource.reservation:
+  url: "http://10.36.130.89/orderingResourceReservation"
+  stub:
+    isEnabled: true
+
+crm.contact.management:
+  url: "http://10.36.130.89/crmContactManagement"
+  stub:
+    isEnabled: true
+
+ordering.package.validation:
+  #url: "http://10.36.130.89/orderingPackageValidation"
+  url: "10.11.235.20:10023/orderingPackageValidation"
+  stub:
+    isEnabled: true
+
