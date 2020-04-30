@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id "io.freefair.lombok" version "5.0.1"
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('http://repo.maven.apache.org/maven2')
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter:2.2.6.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.2.6.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.2.6.RELEASE'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools:2.2.6.RELEASE'
+    //testImplementation 'org.springframework.boot:spring-boot-starter-test:2.2.6.RELEASE'
+}
+
+group = 'ru.kdv'
+version = '0.0.1-SNAPSHOT'
+description = 'Stub_module'
+sourceCompatibility = '1.8'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
